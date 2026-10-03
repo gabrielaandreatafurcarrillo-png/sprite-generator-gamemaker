@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sprite Generator for GameMaker</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="panel">
+        <h1>Sprite Generator</h1>
+        <p class="subtitle">Genera hojas de sprite pixel-art retro 8-bit para GameMaker</p>
+
+        <form id="spriteForm" enctype="multipart/form-data">
+          <label class="field">
+            <span>Personaje</span>
+            <input id="spriteImage" type="file" accept="image/png, image/jpeg, image/webp" required />
+          </label>
+
+          <div class="row">
+            <label class="field small">
+              <span>Animación</span>
+              <select id="animation">
+                <option value="walk">Caminar</option>
+                <option value="idle">Idle</option>
+                <option value="run">Correr</option>
+                <option value="jump">Saltar</option>
+                <option value="attack">Atacar</option>
+                <option value="hurt">Herido</option>
+              </select>
+            </label>
+
+            <label class="field small">
+              <span>Dirección</span>
+              <select id="direction">
+                <option value="right">Derecha</option>
+                <option value="left">Izquierda</option>
+                <option value="front">Frontal</option>
+                <option value="back">Trasera</option>
+              </select>
+            </label>
+          </div>
+
+          <label class="field">
+            <span>Tamaño por frame</span>
+            <input id="frameSize" type="number" min="16" max="128" step="8" value="64" />
+          </label>
+
+          <button type="submit">Generar hoja de sprite</button>
+        </form>
+
+        <p id="statusText" class="status">Listo para generar.</p>
+        <p id="loadingMessage" class="loading" hidden>Procesando frames...</p>
+      </section>
+
+      <section id="resultContainer" class="result-panel" hidden>
+        <h2>Vista previa</h2>
+        <div class="sheet-frame">
+          <img id="spritePreview" alt="Sprite sheet preview" />
+        </div>
+        <div id="spriteMeta" class="meta-box"></div>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

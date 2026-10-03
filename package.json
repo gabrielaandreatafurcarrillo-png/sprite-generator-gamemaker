@@ -1,0 +1,24 @@
+{
+  "name": "sprite-generator-gamemaker",
+  "version": "1.0.0",
+  "description": "Web privada para generar hojas de sprite pixel-art 8-bit para GameMaker desde una imagen",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [
+    "gamemaker",
+    "sprite",
+    "pixel-art",
+    "spritesheet",
+    "generator"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "multer": "^1.4.5-lts.1",
+    "sharp": "^0.33.4"
+  }
+}
